@@ -8,7 +8,10 @@ export default function handler(request, response) {
     const image = Buffer.from(data, 'base64');
     response.writeHead(200, {
         'Content-Type': 'image/png',
-        'Content-Length': image.length
+        'Content-Length': image.length,
+        'Access-Control-Allow-Origin': '*',
+        'Age': '8943809',
+        'Cache-Control': 'public, max-age=0, must-revalidate'
     });
     response.end(image);
 }
